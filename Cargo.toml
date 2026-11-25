@@ -1,0 +1,18 @@
+[package]
+name = "GlobalPTT"
+version = "0.1.0"
+edition = "2024"
+license = "Unlicense"
+description = "Linux push-to-talk audio bridge using PipeWire and the Global Shortcuts portal"
+readme = "README.md"
+repository = "https://github.com/tofixrs/GlobalPTT"
+keywords = ["push-to-talk", "pipewire", "linux", "audio"]
+categories = ["multimedia::audio"]
+
+[dependencies]
+anyhow = "1.0.105"
+ashpd = { version = "0.13.13", default-features = false, features = ["tokio", "global_shortcuts"] }
+futures-util = "0.3"
+pipewire = { version = "0.10.1", features = ["v0_3_44"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+zbus = "5"

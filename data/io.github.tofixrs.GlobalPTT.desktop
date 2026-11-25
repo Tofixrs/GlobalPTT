@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=GlobalPTT
+Comment=Push-to-talk audio bridge
+Exec=@EXEC@
+Terminal=true
+Categories=AudioVideo;Audio;
