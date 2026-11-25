@@ -18,7 +18,12 @@
       pkgs = import nixpkgs {inherit system;};
       craneLib = crane.mkLib pkgs;
 
-      src = craneLib.cleanCargoSource ./.;
+      src = pkgs.lib.cleanSourceWith {
+        src = ./.;
+        filter = path: type:
+          (craneLib.filterCargoSources path type)
+          || (pkgs.lib.hasInfix "/data/" path);
+      };
 
       commonArgs = {
         inherit src;
